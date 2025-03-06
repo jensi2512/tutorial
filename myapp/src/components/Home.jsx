@@ -1,3 +1,5 @@
+import '../static/home.css'
+
 function Home(){
 
     // const username = "Hello world"
