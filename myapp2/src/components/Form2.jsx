@@ -1,38 +1,33 @@
-import { useState } from "react"
+import {useState} from 'react'
 
-
-function Form() {
-
-  const [username, setUsername] = useState("")
-  const [email, setEmail] = useState("")
-  const [data, setData] = useState([])
-
-  function handleSubmit(e){
-    e.preventDefault()
-    setData((preval) => [...preval, {username, email}] )
-    setEmail("")
-    setUsername("")
-  }
-
-  function handleUsername(e){
-     setUsername(e.target.value)
-  }
-
-  function handleEmail(e){
-    setEmail(e.target.value)
-  }
-
+function Form2() {
+      
+      const [formData, setFormData] = useState({username : "", email : ""})
+      const [data, setData] = useState([])
+    
+      function handleSubmit(e){
+        e.preventDefault()
+        setData((preval) => [...preval, formData] )
+        setFormData({username : "", email : ""})
+      }
+    
+      function handleChange(e){
+        setFormData((preval) => ({...preval, [e.target.name] : e.target.value}))
+      }
+    
+    
   return (
     <div>
+       <div>
       <div className="container mt-5">
         <div className="row">
           <div className="col-5 m-auto">
             <form action="" onSubmit={handleSubmit}>
               <div className="input-group mb-3">
-                <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={username}  onChange={handleUsername}/>
+                <input type="text" className="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={formData.username} name='username'  onChange={handleChange}/>
               </div>
               <div className="input-group mb-3">
-                <input type="email" className="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"value={email} onChange={handleEmail}/>
+                <input type="email" className="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1"value={formData.email} name='email' onChange={handleChange}/>
               </div>
               <button type="submit" className="btn btn-success">Submit</button>
             </form>
@@ -62,7 +57,8 @@ function Form() {
         </div>
       </div>
     </div>
+    </div>
   )
 }
 
-export default Form
+export default Form2
