@@ -25,6 +25,7 @@ function Table() {
                    <table className="table">
                       <thead>
                          <tr>
+                           <th>No.</th>
                            <th>Username</th>
                            <th>Email</th>
                            <th>Mobile</th>
@@ -35,9 +36,14 @@ function Table() {
                             {data.length > 0 && data.map((element, index) => {
                               return (
                                 <tr key={index}>
+                                    <td>{index + 1}</td>
                                     <td>{element.username}</td>
                                     <td>{element.email}</td>
                                     <td>{element.mobile}</td>
+                                    <td>
+                                      <button className="btn"><i className="bi bi-pencil-square text-primary fs-5"></i></button>
+                                      <button className="btn"><i className="bi bi-trash3 text-danger fs-5"></i></button>
+                                    </td>
                                 </tr>
                               )
                             })}
