@@ -13,7 +13,8 @@ function Form() {
     }
 
    async function handleSubmit(e){
-        e.preventDefault()
+       e.preventDefault()
+       toast.dismiss()
         await postData(formData)
         toast.success("User add Successfully")
         setFormData({username : "", email : "", mobile : ""})

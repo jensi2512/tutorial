@@ -15,5 +15,13 @@ async function postData(obj){
   }
 }
 
+async function deleteData(id){
+  try {
+    await axios.delete(`http://localhost:3002/users/${id}`)
+  } catch (error) {
+    console.log(error)
+  }
+}
 
-export {getData, postData}
+
+export {getData, postData, deleteData}
