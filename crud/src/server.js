@@ -23,5 +23,13 @@ async function deleteData(id){
   }
 }
 
+async function editData(id, obj) {
+    try {
+      await axios.put(`http://localhost:3002/users/${id}`, obj)
+    } catch (error) {
+      console.log(error)
+    }
+}
 
-export {getData, postData, deleteData}
+
+export {getData, postData, deleteData, editData}
