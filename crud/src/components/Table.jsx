@@ -66,9 +66,9 @@ function Table() {
                     </tr>
                   )
                 })}
-                <EditForm editObj={editObj} edit={edit} setEdit={setEdit} setPagerefresh={setPagerefresh}/>
               </tbody>
             </table>
+            <EditForm editObj={editObj} edit={edit} setEdit={setEdit} setPagerefresh={setPagerefresh} />
           </div>
         </div>
       </div>

@@ -18,7 +18,7 @@ function Form() {
         await postData(formData)
         toast.success("User add Successfully")
         setFormData({username : "", email : "", mobile : ""})
-        navigate('/')
+        navigate('/table')
     }
 
     return (
@@ -38,7 +38,7 @@ function Form() {
                                 <input type="tel" className="form-control" placeholder="Mobile" aria-label="Mobile" aria-describedby="basic-addon1" name="mobile" value={formData.mobile} onChange={handleChange} required/>
                             </div>
                         <button className="btn btn-success" type="submit">Sunmit</button>
-                        <button className="btn btn-warning ms-3" onClick={() => navigate('/')}>Close</button>
+                        <button className="btn btn-warning ms-3" onClick={() => navigate('/table')}>Close</button>
                         </form>
                     </div>
                 </div>
