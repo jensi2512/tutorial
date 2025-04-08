@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import About from './components/About';
 import Protact from './components/Protact';
+import Contact from './components/Contact';
 
 function App() {
    return (
@@ -17,6 +18,7 @@ function App() {
                <Route path='/form' element={<Protact> <Form /> </Protact>} />
                <Route path='/table' element={<Protact> <Table /> </Protact>} />
                <Route path='/about' element={<Protact><About /></Protact>} />
+               <Route path='/contact' element={<Protact><Contact /></Protact>} />
             </Routes>
             <ToastContainer
                position="top-center"
